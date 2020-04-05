@@ -15,7 +15,62 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+
+          <div class="form">
+
+            <form>
+                <label for="name">Length Of Characters? Range of 8-128:</label>
+                <input type="number" name="characterLength" id="characterLength" min="8" max="128" class="form-input"/>
+                
+                <p>
+                    Would you like it to have lowercase letters?
+                    <span class="radio-wrapper">
+                        <input type="radio" name="lowerCase-confirm" id="lowerCase-yes" />
+                        <label for="lowerCase-yes">Yes</label>
+                    </span>
+                    <span class="radio-wrapper">
+                        <input type="radio" name="lowerCase-confirm" id="lowerCase-no" />
+                        <label for="lowerCase-no">No</label>
+                    </span>
+                </p>
+                <p>
+                  Would you like it to have Upercase letters?
+                  <span class="radio-wrapper">
+                      <input type="radio" name="upperCase-confirm" id="upperCase-yes" />
+                      <label for="upperCase-yes">Yes</label>
+                  </span>
+                  <span class="radio-wrapper">
+                      <input type="radio" name="upperCase-confirm" id="upperCase-no" />
+                      <label for="upperCase-no">No</label>
+                  </span>
+                </p>
+                <p>
+                  Would you like it to have numbers?
+                  <span class="radio-wrapper">
+                      <input type="radio" name="number-confirm" id="number-yes" />
+                      <label for="number-yes">Yes</label>
+                  </span>
+                  <span class="radio-wrapper">
+                      <input type="radio" name="number-confirm" id="number-no" />
+                      <label for="number-no">No</label>
+                  </span>
+                </p>
+                <p>
+                  Would you like it to have special characters?
+                  <span class="radio-wrapper">
+                      <input type="radio" name="specialC-confirm" id="specialC-yes" />
+                      <label for="specialC-yes">Yes</label>
+                  </span>
+                  <span class="radio-wrapper">
+                      <input type="radio" name="specialC-confirm" id="specialC-no" />
+                      <label for="specialC-no">No</label>
+                  </span>
+                </p>
+            </form>
         </div>
+
+        </div>
+
         <div class="card-body">
           <textarea
             readonly
@@ -25,7 +80,7 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
