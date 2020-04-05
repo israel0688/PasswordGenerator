@@ -10,10 +10,15 @@ const numberyes = document.getElementById
 ('numberyes')
 const specialCyes = document.getElementById
 ('specialCyes')
-
+const generateBtn = document.getElementById
+('generateBtn')
 
 const form = document.getElementById
  ('passwordGeneratorForm')
+
+const passwordDisplay = document.getElementById
+('passwordDisplay')
+
 
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
@@ -25,6 +30,28 @@ const SPECIAL_CHAR_CODES = arrayFromLowToHigh(33, 47)
 
 function generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
 {
+  let charCodes = LOWERCASE_CHAR_CODES
+ 
+  if (upperCaseyes) charCodes = charCodes.concat
+  (UPPERCASE_CHAR_CODES)
+
+  if (lowerCaseyes) charCodes = charCodes.concat
+  (LOWERCASE_CHAR_CODES)
+
+  if(specialCyes) charCodes = charCodes.concat
+  (SPECIAL_CHAR_CODES)
+
+  if(numberyes) charCodes = charCodes.concat
+  (NUMBER_CHAR_CODES)
+
+  const passwordCharacter = []
+  for (let i = 0; i < characterLength; i++)
+  {
+    const characterCode = charCodes[Math.floor(Math.random()* charCodes.length)]
+    passwordCharacter.push(String.fromCharCode(charcterCode))
+  }
+
+  return passwordCharacter.join('')
 
 }
 
@@ -38,15 +65,16 @@ function arrayFromLowToHigh(low, hight)
   return array
 }
 
-form.addEventListener('submit', e =>
+generateBtn.addEventListener('click', e =>
 {
   e.preventDefault()
   const characterLength = characterLength.value
-  const upperCaseyes = upperCaseyesElement.value
-  const lowerCaseyes = lowerCaseyesElement.value
-  const numberyes = numberyesElement.value
-  const specialCyes = specialCyesElement.value
+  const upperCaseyes = upperCaseyesElement.checked
+  const lowerCaseyes = lowerCaseyesElement.checked
+  const numberyes = numberyesElement.checked
+  const specialCyes = specialCyesElement.checked
   const password = generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
+  passwordDisplay.innerText = password
 
 })
 
