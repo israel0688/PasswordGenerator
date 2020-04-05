@@ -1,5 +1,8 @@
 // Assignment code here
 
+const form = document.getElementById
+ ('passwordGeneratorForm')
+
 const characterLength = document.getElementById
 ('characterLength')
 const upperCaseyes = document.getElementById
@@ -13,8 +16,7 @@ const specialCyes = document.getElementById
 const generateBtn = document.getElementById
 ('generateBtn')
 
-const form = document.getElementById
- ('passwordGeneratorForm')
+
 
 const passwordDisplay = document.getElementById
 ('passwordDisplay')
@@ -26,10 +28,11 @@ const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
 const SPECIAL_CHAR_CODES = arrayFromLowToHigh(33, 47) 
                             .concat(arrayFromLowToHigh(58, 64))
                             .concat(arrayFromLowToHigh(91,96))
-                            .concat(arrayFromLowToHigh(124,126))
+                            .concat(arrayFromLowToHigh(123,126))
 
 function generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
 {
+
   let charCodes = LOWERCASE_CHAR_CODES
  
   if (upperCaseyes) charCodes = charCodes.concat
@@ -44,14 +47,14 @@ function generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes
   if(numberyes) charCodes = charCodes.concat
   (NUMBER_CHAR_CODES)
 
-  const passwordCharacter = []
+  const passwordCharacters = []
   for (let i = 0; i < characterLength; i++)
   {
     const characterCode = charCodes[Math.floor(Math.random()* charCodes.length)]
-    passwordCharacter.push(String.fromCharCode(charcterCode))
+    passwordCharacters.push(String.fromCharCode(characterCode))
   }
 
-  return passwordCharacter.join('')
+  return passwordCharacters.join('')
 
 }
 
@@ -65,11 +68,11 @@ function arrayFromLowToHigh(low, hight)
   return array
 }
 
-generateBtn.addEventListener('click', e =>
+form.addEventListener('submit', e =>
 {
   e.preventDefault()
   const characterLength = characterLength.value
-  const upperCaseyes = upperCaseyesElement.checked
+  const upperCaseyes = upperCaseyes.checked
   const lowerCaseyes = lowerCaseyesElement.checked
   const numberyes = numberyesElement.checked
   const specialCyes = specialCyesElement.checked
@@ -78,20 +81,4 @@ generateBtn.addEventListener('click', e =>
 
 })
 
- /*
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); */

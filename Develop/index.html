@@ -7,6 +7,8 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  
+  
   <body>
     <form id="passwordGeneratorForm" class="form">
     <div class="wrapper">
@@ -20,7 +22,7 @@
           <div class="characterInput">
 
             <form>
-                <label for="name">Length Of Characters? Range of 8-128:</label>
+                <label for="characterLength">Length Of Characters? Range of 8-128:</label>
                 <input type="number" name="characterLength" id="characterLength" min="8" max="128" class="form-input"/>
                 
                 <p>
@@ -61,11 +63,13 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id= "generate" class= "btn">Generate Password</button>
+          <button type= "submit" id= "generateBtn" class= "btn">Generate Password</button>
         </div>
       </div>
     </div>
     <script src="script.js"></script>
     </form>
   </body>
+
+
 </html>
