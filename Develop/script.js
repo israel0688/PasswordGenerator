@@ -1,3 +1,5 @@
+// used https://youtu.be/iKo9pDKKHnc as a source
+
 // Assignment code here
 
 const form = document.getElementById
@@ -70,15 +72,13 @@ function arrayFromLowToHigh(low, hight)
 
 form.addEventListener('submit', e =>
 {
-  e.preventDefault()
+ e.preventDefault()
   const characterLength = characterLength.value
   const upperCaseyes = upperCaseyes.checked
-  const lowerCaseyes = lowerCaseyesElement.checked
-  const numberyes = numberyesElement.checked
-  const specialCyes = specialCyesElement.checked
+  const lowerCaseyes = lowerCaseyes.checked
+  const numberyes = numberyes.checked
+  const specialCyes = specialCyes.checked
   const password = generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
-  passwordDisplay.innerText = password
+        passwordDisplay.innerText = password
 
 })
-
-
