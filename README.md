@@ -7,3 +7,5 @@
 ### https://israel0688.github.io/PasswordGenerator/Develop/index.html
 
 ![alt "screenshot"](https://github.com/israel0688/PasswordGenerator/blob/master/Develop/passwordPic.png)
+
+#### used https://youtu.be/iKo9pDKKHnc as a source

@@ -36,9 +36,8 @@ const SPECIAL_CHAR_CODES = arrayFromLowToHigh(33, 47)
  // function use to generate the password                           
 function generatePassword(charLen, upperCase, lowerCase, number, specialC)
 {
-
   let charCodes = LOWERCASE_CHAR_CODES
- 
+
   if (upperCase) charCodes = charCodes.concat
   (UPPERCASE_CHAR_CODES)
 
@@ -50,6 +49,9 @@ function generatePassword(charLen, upperCase, lowerCase, number, specialC)
 
   if(number) charCodes = charCodes.concat
   (NUMBER_CHAR_CODES)
+
+ // else window.alert('You did not make a selection! Please make a selection:');
+// I couldn't get the above line of code to work properly, would apprectiate feedback, Thank you
 
   const passwordCharacters = []
   for (let i = 0; i < charLen; i++)
