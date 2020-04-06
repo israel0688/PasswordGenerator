@@ -6,4 +6,4 @@
 
 ### https://israel0688.github.io/PasswordGenerator/Develop/index.html
 
-![alt "screenshot"](https://github.com/israel0688/PasswordGenerator/Develop/passwordPic.png)
+![alt "screenshot"](https://github.com/israel0688/PasswordGenerator/blob/master/Develop/passwordPic.png)
