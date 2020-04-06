@@ -97,6 +97,7 @@ button[disabled] {
   float: right;
 }
 
+/* Added this to make button green when mouse is hovered over it*/
 .btn:hover
 {
   background-color: green;

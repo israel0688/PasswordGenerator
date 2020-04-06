@@ -2,6 +2,7 @@
 
 // Assignment code here
 
+// code to access the html file
 const form = document.getElementById
  ('passwordGeneratorForm')
 
@@ -19,11 +20,11 @@ const generateBtn = document.getElementById
 ('generateBtn')
 
 
-
+// used to display the generated password
 const passwordDisplay = document.getElementById
 ('passwordDisplay')
 
-
+// arrays from character codes used for populating password
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
 const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
@@ -32,25 +33,26 @@ const SPECIAL_CHAR_CODES = arrayFromLowToHigh(33, 47)
                             .concat(arrayFromLowToHigh(91,96))
                             .concat(arrayFromLowToHigh(123,126))
 
-function generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
+ // function use to generate the password                           
+function generatePassword(charLen, upperCase, lowerCase, number, specialC)
 {
 
   let charCodes = LOWERCASE_CHAR_CODES
  
-  if (upperCaseyes) charCodes = charCodes.concat
+  if (upperCase) charCodes = charCodes.concat
   (UPPERCASE_CHAR_CODES)
 
-  if (lowerCaseyes) charCodes = charCodes.concat
+  if (lowerCase) charCodes = charCodes.concat
   (LOWERCASE_CHAR_CODES)
 
-  if(specialCyes) charCodes = charCodes.concat
+  if(specialC) charCodes = charCodes.concat
   (SPECIAL_CHAR_CODES)
 
-  if(numberyes) charCodes = charCodes.concat
+  if(number) charCodes = charCodes.concat
   (NUMBER_CHAR_CODES)
 
   const passwordCharacters = []
-  for (let i = 0; i < characterLength; i++)
+  for (let i = 0; i < charLen; i++)
   {
     const characterCode = charCodes[Math.floor(Math.random()* charCodes.length)]
     passwordCharacters.push(String.fromCharCode(characterCode))
@@ -70,15 +72,20 @@ function arrayFromLowToHigh(low, hight)
   return array
 }
 
+
+/*I'm still not 100% sure what goes on in this part but I finally got it working,
+  I beleive it activates when the button is clicked and submits the form with user input*/
 form.addEventListener('submit', e =>
 {
  e.preventDefault()
-  const characterLength = characterLength.value
-  const upperCaseyes = upperCaseyes.checked
-  const lowerCaseyes = lowerCaseyes.checked
-  const numberyes = numberyes.checked
-  const specialCyes = specialCyes.checked
-  const password = generatePassword(characterLength, upperCaseyes, lowerCaseyes, numberyes, specialCyes)
+  const charLen = characterLength.value
+  const upperCase = upperCaseyes.checked
+  const lowerCase = lowerCaseyes.checked
+  const number = numberyes.checked
+  const specialC = specialCyes.checked
+  const password = generatePassword(charLen, upperCase, lowerCase, number, specialC)
         passwordDisplay.innerText = password
 
 })
+
+// used https://youtu.be/iKo9pDKKHnc as a source
